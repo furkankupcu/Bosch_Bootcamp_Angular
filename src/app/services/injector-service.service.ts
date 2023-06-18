@@ -9,7 +9,7 @@ import { BB_Injector } from '../model/injector';
 
 export class InjectorServiceService {
 
-  private apiUrl = 'https://localhost:7154/api/Injectors';
+  private apiUrl = 'https://boschbb.azurewebsites.net/api/Injectors';
 
   constructor( private http: HttpClient ) { }
   getDropdownData(): Observable<any[]> {

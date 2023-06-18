@@ -52,12 +52,12 @@ export class HttpClientService {
   }
 
   postOrder<T>(_orderCount : number, _modelNumber : string,_orderId: number, body: Partial<T>): Observable<T>{
-    let newUrl= `https://localhost:7154/api/Injectors/addMultipleInjector?count=${_orderCount}&modelNumber=${_modelNumber}&orderId=${_orderId}`
+    let newUrl= `https://boschbb.azurewebsites.net/api/Injectors/addMultipleInjector?count=${_orderCount}&modelNumber=${_modelNumber}&orderId=${_orderId}`
     return this.httpClient.post<T>(newUrl,body);
   }
 
   postProcess<T>(_stationId : number,_injectorId: number,_subcomponentId: number,_stationProcesss: number,body: Partial<T>): Observable<T>{
-    let newUrl = `https://localhost:7154/api/StationProcesss?stationId=${_stationId}&InjectorId=${_injectorId}&subcomponentId=${_subcomponentId}&processStatus=${_stationProcesss}`
+    let newUrl = `https://boschbb.azurewebsites.net/api/StationProcesss?stationId=${_stationId}&InjectorId=${_injectorId}&subcomponentId=${_subcomponentId}&processStatus=${_stationProcesss}`
     return this.httpClient.post<T>(newUrl,body);
   }
 }

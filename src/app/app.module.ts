@@ -32,7 +32,7 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     CanvasJSAngularChartsModule
   ],
   providers: [
-    {provide:"baseUrl",useValue:"https://localhost:7154/api",multi:true}
+    {provide:"baseUrl",useValue:"https://boschbb.azurewebsites.net/api",multi:true}
   ],
   bootstrap: [HeaderComponent]
 })
