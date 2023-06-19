@@ -51,10 +51,16 @@ export class HttpClientService {
     return this.httpClient.delete<T>(url, {headers : requestParameter.headers})
   }
 
-  postOrder<T>(_orderCount : number, _modelNumber : string,_orderId: number, body: Partial<T>): Observable<T>{
+  postOrderDetail<T>(_orderCount : number, _modelNumber : string,_orderId: number, body: Partial<T>): Observable<T>{
     let newUrl= `https://boschbb.azurewebsites.net/api/Injectors/addMultipleInjector?count=${_orderCount}&modelNumber=${_modelNumber}&orderId=${_orderId}`
     return this.httpClient.post<T>(newUrl,body);
   }
+  ///
+  postNewOrder<T>(_orderId: number, body: Partial<T>): Observable<T>{
+    let newUrl= `https://boschbb.azurewebsites.net/api/Orders/newOrder?newId=${_orderId}`
+    return this.httpClient.post<T>(newUrl,body);
+  }
+
 
   postProcess<T>(_stationId : number,_injectorId: number,_subcomponentId: number,_stationProcesss: number,body: Partial<T>): Observable<T>{
     let newUrl = `https://boschbb.azurewebsites.net/api/StationProcesss?stationId=${_stationId}&InjectorId=${_injectorId}&subcomponentId=${_subcomponentId}&processStatus=${_stationProcesss}`

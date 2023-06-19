@@ -40,9 +40,15 @@ export class CreateOrderComponent implements OnInit{
   }
 
   createOrder(){ 
-    this.httpClientService.postOrder(this.counter,this.modelNumber,1,
+
+    this.httpClientService.postNewOrder(this.newOrderId,
+      {
+        newOrderId : this.newOrderId
+    });
+
+    this.httpClientService.postOrderDetail(this.counter,this.modelNumber,this.newOrderId,
       { count : this.counter,
         modelNumber: this.modelNumber,
-        orderId : 1}).subscribe();
+        orderId : this.newOrderId}).subscribe();
   }
 }
