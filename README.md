@@ -3,6 +3,7 @@
 
 This project was developed using MS SQL, .NET, ANGULAR.
 
+Backend: https://github.com/furkankupcu/Bosch_Bootcamp_Net
 
 UML Diagram
 
